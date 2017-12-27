@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>red.ico</file>
+        <file>green.ico</file>
+        <file>logo.png</file>
+        <file>pause.png</file>
+        <file>play.png</file>
+        <file>reset.png</file>
+        <file>arrow.jpeg</file>
+        <file>arrow_left.jpeg</file>
+    </qresource>
+</RCC>
