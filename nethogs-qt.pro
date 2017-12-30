@@ -1,10 +1,4 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2016-09-29T17:28:12
-#
-#-------------------------------------------------
-
-QT       += core gui network
+QT += core gui network
 QT += charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -12,43 +6,41 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = nethogs-qt
 TEMPLATE = app
 
+SOURCES += src/main.cpp\
+    src/mainwindow.cpp \
+    src/scanthread.cpp \
+    src/refreshthread.cpp \
+    src/linebandwith.cpp \
+    src/smallchart.cpp \
+    src/qpushbuttonarrow.cpp \
+    src/nethogs/connection.cpp \
+    src/nethogs/conninode.cpp \
+    src/nethogs/devices.cpp \
+    src/nethogs/inode2prog.cpp \
+    src/nethogs/packet.cpp \
+    src/nethogs/process.cpp \
+    src/nethogs/decpcap.c
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    connection.cpp \
-    conninode.cpp \
-    devices.cpp \
-    inode2prog.cpp \
-    packet.cpp \
-    process.cpp \
-    decpcap.c \
-    scanthread.cpp \
-    refreshthread.cpp \
-    linebandwith.cpp \
-    smallchart.cpp \
-    qpushbuttonarrow.cpp
+HEADERS += src/mainwindow.h \
+    src/scanthread.h \
+    src/refreshthread.h \
+    src/linebandwith.h \
+    src/smallchart.h \
+    src/qpushbuttonarrow.h \
+    src/nethogs/connection.h \
+    src/nethogs/conninode.h \
+    src/nethogs/decpcap.h \
+    src/nethogs/devices.h \
+    src/nethogs/inode2prog.h \
+    src/nethogs/nethogs.h \
+    src/nethogs/packet.h \
+    src/nethogs/process.h
 
-HEADERS  += mainwindow.h \
-    connection.h \
-    conninode.h \
-    decpcap.h \
-    devices.h \
-    inode2prog.h \
-    nethogs.h \
-    packet.h \
-    process.h \
-    scanthread.h \
-    refreshthread.h \
-    linebandwith.h \
-    smallchart.h \
-    qpushbuttonarrow.h
-
-FORMS    += mainwindow.ui
+FORMS += src/mainwindow.ui
 
 #CONFIG += -DDEBUG=1
 #CONFIG += link_pkgconfig
 #PKGCONFIG += pcap
-
 #PKGCONFIG += geoip TODO ;-)
 
 CONFIG += -O2 -Wall
@@ -56,4 +48,4 @@ CONFIG += -O2 -Wall
 LIBS += -lpcap -lm
 
 RESOURCES += \
-    nethogs-qt.qrc
+    src/icons/nethogs-qt.qrc

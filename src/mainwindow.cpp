@@ -30,9 +30,7 @@
 
 //#include <QMetaType>
 
-
-
-#include <qpushbuttonarrow.h>
+#include "qpushbuttonarrow.h"
 
 // for geteuid
 #include <unistd.h>

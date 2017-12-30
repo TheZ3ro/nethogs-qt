@@ -22,9 +22,9 @@
 
 #include "scanthread.h"
 #include <QtDebug>
-#include "process.h"
-#include "devices.h"
-#include "nethogs.h"
+#include "nethogs/process.h"
+#include "nethogs/devices.h"
+#include "nethogs/nethogs.h"
 
 extern Process * unknownudp;
 timeval curtime;

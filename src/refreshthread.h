@@ -25,8 +25,8 @@
 #include <QThread>
 #include <QHostAddress>
 
-#include "conninode.h"
-#include "process.h"
+#include "nethogs/conninode.h"
+#include "nethogs/process.h"
 
 class RefreshThread : public QThread
 {

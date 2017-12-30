@@ -20,7 +20,7 @@
    <string>nethogs-qt</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="nethogs-qt.qrc">
+   <iconset resource="icons/nethogs-qt.qrc">
     <normaloff>:/logo.png</normaloff>:/logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -34,6 +34,15 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::NoSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <property name="gridStyle">
+         <enum>Qt::SolidLine</enum>
         </property>
         <property name="rowCount">
          <number>3</number>
@@ -107,7 +116,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="nethogs-qt.qrc">
+         <iconset resource="icons/nethogs-qt.qrc">
           <normaloff>:/arrow_left.jpeg</normaloff>:/arrow_left.jpeg</iconset>
         </property>
         <property name="iconSize">
@@ -213,7 +222,7 @@
   </action>
   <action name="actionPause">
    <property name="icon">
-    <iconset resource="nethogs-qt.qrc">
+    <iconset resource="icons/nethogs-qt.qrc">
      <normaloff>:/pause.png</normaloff>:/pause.png</iconset>
    </property>
    <property name="text">
@@ -222,7 +231,7 @@
   </action>
   <action name="actionReset">
    <property name="icon">
-    <iconset resource="nethogs-qt.qrc">
+    <iconset resource="icons/nethogs-qt.qrc">
      <normaloff>:/reset.png</normaloff>:/reset.png</iconset>
    </property>
    <property name="text">
@@ -232,7 +241,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="nethogs-qt.qrc"/>
+  <include location="icons/nethogs-qt.qrc"/>
  </resources>
  <connections/>
 </ui>

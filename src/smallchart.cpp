@@ -31,7 +31,7 @@ SmallChart::SmallChart(QWidget *parent)
     chart->addSeries(&series_recv);
     chart->addSeries(&series_sent);
 
-    //chart->legend()->hide();
+    chart->legend()->hide();
 
     if (xdate) {
         QDateTimeAxis *axisX = new QDateTimeAxis;

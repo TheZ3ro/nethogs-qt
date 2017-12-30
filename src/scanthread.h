@@ -32,7 +32,7 @@
 #include <netinet/udp.h>
 
 extern "C" {
-#include "decpcap.h"
+#include "nethogs/decpcap.h"
 }
 
 class ScanThread : public QThread
