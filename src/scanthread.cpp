@@ -135,8 +135,18 @@ void ScanThread::run()
 
     handle * handles = NULL;
     device * current_dev = devices;
+
+    int nb_devices = 0;
+    int nb_failed_devices = 0;
+
     while (current_dev != NULL) {
-        getLocal(current_dev->name);
+        ++nb_devices;
+
+        if (!getLocal(current_dev->name)) {
+          qCritical() <<  "getifaddrs failed while establishing local IP.";
+          ++nb_failed_devices;
+          continue;
+        }
 
         dp_handle * newhandle = dp_open_live(current_dev->name, BUFSIZ, promisc, 100, errbuf);
         if (newhandle != NULL)
@@ -155,9 +165,15 @@ void ScanThread::run()
         else
         {
             qCritical() << "Error opening handler for device " << current_dev->name;
+            ++nb_failed_devices;
         }
 
         current_dev = current_dev->next;
+    }
+
+    if (nb_devices == nb_failed_devices) {
+        qCritical() <<  "Error all device failed";
+        return;
     }
 
     struct dpargs * userdata = (dpargs *) malloc (sizeof (struct dpargs));

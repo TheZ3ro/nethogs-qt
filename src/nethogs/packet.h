@@ -39,7 +39,7 @@ enum direction {
 
 /* To initialise this module, call getLocal with the currently
  * monitored device (e.g. "eth0:1") */
-void getLocal (const char *device);
+int getLocal (const char *device);
 
 class Packet
 {
